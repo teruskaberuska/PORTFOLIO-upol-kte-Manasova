@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>kočka arnošt 😻</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      position: relative;
+      scroll-behavior: smooth;
+      background: linear-gradient(135deg, #ffd6f5, #e0c3fc);
+      font-family: "Tw Cen MT", cursive;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    h1, h2 {
+      color: #000;
+    }
+
+    .navbar {
+      background-color: #b4008f;
+    }
+
+    .navbar .nav-link,
+    .navbar-brand {
+      color: white !important;
+      font-weight: bold;
+    }
+
+    /* Úvodní obrázek */
+    .center-img {
+      width: 25vw;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeZoom 1.2s ease forwards;
+    }
+
+    @keyframes fadeZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Galerie */
+    .gallery img {
+      cursor: pointer;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
+
+<!-- NAVIGACE -->
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">meow</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">domů</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">o arnouškovi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">galerie</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="text-center">
+  <div class="container">
+    <h1 class="display-4">kočka arnošt 😻</h1>
+    <p class="lead">tahle stránka je věnována mému milovanému kocourovi</p>
+
+    <div class="d-flex justify-content-center mt-4">
+      <img src="images/kocicka1.jpg" alt="Arnošt" class="center-img">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="bg-light">
+  <div class="container">
+    <h2>o arnouškovi</h2>
+
+    <ul>
+      <li>získali jsme ho jako pouličního kocoura</li>
+      <li>jmenuje se Arnošt (také Alexandr Veliký)</li>
+      <li>je mu cca 5 let</li>
+      <li>přes zimu byl vykrmen, teď drží dietu</li>
+      <li>když nedostane najíst, žebrá u sousedů</li>
+      <li>nosí nám mrtvé myši</li>
+      <li>nejradši sedí na okně</li>
+      <li>zásadně neběhá</li>
+    </ul>
+
+    <p>stejně ho zbožňujeme 💗</p>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="gallery">
+  <div class="container">
+    <h2 class="mb-4">nejlepší výběr arnouškových fotografií</h2>
+
+    <div class="row g-4 gallery">
+      <div class="col-md-4">
+        <img src="images/kocicka2.jpg" class="img-fluid"
+             data-bs-toggle="modal" data-bs-target="#lightbox"
+             onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="col-md-4">
+        <img src="images/kocicka3.jpg" class="img-fluid"
+             data-bs-toggle="modal" data-bs-target="#lightbox"
+             onclick="openLightbox(this.src)">
+      </div>
+
+      <div class="col-md-4">
+        <img src="images/kocicka4.jpg" class="img-fluid"
+             data-bs-toggle="modal" data-bs-target="#lightbox"
+             onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="contact" class="bg-light">
+  <div class="container">
+    <h2>kontakt</h2>
+    <p>pro více informací či foteček kontaktujte mě 💕  
+      <strong>terka.3692@seznam.cz</strong>
+    </p>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="modal fade" id="lightbox" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <img id="lightbox-img" class="img-fluid w-100 rounded">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+  }
+</script>
+
+</body>
+</html>
